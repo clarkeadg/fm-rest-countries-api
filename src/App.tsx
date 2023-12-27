@@ -26,7 +26,7 @@ const router = createBrowserRouter([
     ]
   }  
 ], {
-  basename: "/fm-rest-countries-api",
+  basename: "/fm-rest-countries-api/",
 });
 
 const App = () => {
