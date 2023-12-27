@@ -1,5 +1,6 @@
 import ThemeContextProvider from './components/ThemeSwitcher/ThemeContext'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Layout from './components/Layout/Layout'
 import Home from './pages/Home'
 import Details from './pages/Details'
 import ErrorPage from './pages/ErrorPage'
@@ -7,19 +8,23 @@ import ErrorPage from './pages/ErrorPage'
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home/>,
-    errorElement: <ErrorPage/>
-  },
-  {
-    path: "/details",
-    element:  <Details/>,
-    errorElement: <ErrorPage/>
-  },
-  {
-    path: "*",
-    element:  <ErrorPage/>,
-    errorElement: <ErrorPage />
-  }
+    element: <Layout/>,
+    errorElement: <ErrorPage/>,
+    children: [
+      {
+        path: "",
+        element: <Home />
+      },
+      {
+        path: "details",
+        element: <Details />
+      },
+      {
+        path: "*",
+        element:  <ErrorPage/>
+      }
+    ]
+  }  
 ], {
   basename: "/fm-rest-countries-api",
 });

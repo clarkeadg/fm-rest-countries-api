@@ -1,4 +1,5 @@
 import { ReactNode, memo } from 'react'
+import { Outlet } from "react-router-dom";
 import Attribution from '../Attribution'
 import { useThemeContext } from '../ThemeSwitcher/ThemeContext'
 import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher'
@@ -6,7 +7,7 @@ import Link from '../../lib/Link'
 import './Layout.css'
 
 type LayoutProps = {
-  children: ReactNode
+  children?: ReactNode
 }
 
 const Layout = ({ children }:LayoutProps) => {
@@ -22,7 +23,7 @@ const Layout = ({ children }:LayoutProps) => {
         </Link>
         <ThemeSwitcher/>
       </header>
-      { children }
+      { children ? children : <Outlet /> }
       <footer className="absolute bottom-0 w-full h-10 flex items-center justify-center">
         <Attribution/>
       </footer>
