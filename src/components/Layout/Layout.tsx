@@ -4,11 +4,11 @@ import { useThemeContext } from '../ThemeSwitcher/ThemeContext'
 import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher'
 import './Layout.css'
 
-type Layout = {
+type LayoutProps = {
   children: ReactNode
 }
 
-const Layout = ({ children }:Layout) => {
+const Layout = ({ children }:LayoutProps) => {
   const { theme } = useThemeContext();
 
   return (
