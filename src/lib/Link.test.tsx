@@ -1,20 +1,14 @@
 import { describe, it, expect } from 'vitest';
 import { render, fireEvent, screen } from '@testing-library/react';
 
-import Button from './Button';
+import Link from './Link';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const Page = () => {
   return (
-    <>
-      <Button>
-        Hello
-      </Button>
-
-      <Button href="/">
-        Hello2
-      </Button>
-    </>
+    <Link href="/" className="link">
+      Hello
+    </Link>
   )
 }
 
@@ -31,14 +25,14 @@ describe('Renders Button component correctly', async () => {
     <RouterProvider router={router} />
   );
   
-  it('Should have button element', async () => {  
-    const button = container.querySelector('button.button');
-    expect(button).not.toBeNull();
+  it('Should have children content', async () => {  
+    const link = screen.getByText('Hello')
+    expect(link).not.toBeNull();
   });
 
-  it('Should have an anchor element', async () => {  
-    const button = container.querySelector('a.button[href="/"]');
-    expect(button).not.toBeNull();
+  it('Should have anchor element with correct href and class', async () => {  
+    const link = container.querySelector('a.link[href="/"]');
+    expect(link).not.toBeNull();
   });
 
 });

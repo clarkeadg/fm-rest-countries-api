@@ -2,7 +2,8 @@ import { ReactNode, memo } from 'react'
 import './Dropdown.css'
 
 type DropdownProps = {
-  children?: ReactNode}
+  children?: ReactNode
+}
 
 const Dropdown = ({ children }:DropdownProps) => {
   return (
