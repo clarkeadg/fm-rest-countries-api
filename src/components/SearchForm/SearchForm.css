@@ -1,0 +1,5 @@
+.search-form { background: var(--light-theme-elements); }
+.dark .search-form { background: var(--dark-theme-elements); }
+
+.search-form input { color: var(--light-theme-text); background: var(--light-theme-elements); }
+.dark .search-form input { color: var(--dark-theme-text); background: var(--dark-theme-elements); }
