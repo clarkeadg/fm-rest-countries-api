@@ -4,42 +4,30 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body { font-size: 18px; min-height: 100%; margin: 0; padding: 0; }
+html, body { font-size: 14px; min-height: 100%; margin: 0; padding: 0; }
 body { height: 100%; }
 #root { min-height: 100vh; }
 
 :root {
-  /* Primary */
-  --color-bright-blue: hsl(220, 98%, 61%);
-  --color-check-bg: hsl(192, 100%, 67%);
-  --color-check-bg2: hsl(280, 87%, 65%);
-
   /* Light Theme */
-  --light-theme-very-light-gray: hsl(0, 0%, 98%);
-  --light-theme-very-light-grayish-blue: hsl(236, 33%, 92%);
-  --light-theme-light-grayish-blue: hsl(233, 11%, 84%);
-  --light-theme-dark-grayish-blue: hsl(236, 9%, 61%);
-  --light-theme-very-dark-grayish-blue: hsl(235, 19%, 35%);
+  --light-theme-text: hsl(200, 15%, 8%);
+  --light-theme-background: hsl(0, 0%, 98%);
+  --light-theme-input: hsl(0, 0%, 52%);
+  --light-theme-elements: hsl(0, 0%, 100%);
 
   /* Dark Theme */ 
-  --dark-theme-very-dark-blue: hsl(235, 21%, 11%);
-  --dark-theme-very-dark-desaturated-blue: hsl(235, 24%, 19%);
-  --dark-theme-light-grayish-blue: hsl(234, 39%, 85%);
-  --dark-theme-light-grayish-blue-hover: hsl(236, 33%, 92%);
-  --dark-theme-dark-grayish-blue: hsl(234, 11%, 52%);
-  --dark-theme-very-dark-grayish-blue: hsl(233, 14%, 35%);
-  --dark-theme-extra-dark-grayish-blue: hsl(237, 14%, 26%);
+  --dark-theme-text: hsl(0, 0%, 100%);
+  --dark-theme-background: hsl(207, 26%, 17%);
+  --dark-theme-input: hsl(0, 0%, 52%);
+  --dark-theme-elements: hsl(209, 23%, 22%);
 }
 
 .attribution { font-size: 11px; }
-.attribution a { color: hsl(228, 45%, 44%); }
+.attribution a { color: var(--light-theme-input); }
 .attribution a:hover { text-decoration: underline; }
 
 .dark .attribution { color: #fff; }
-.dark .attribution a { color: var(--color-check-bg); }
+.dark .attribution a { color: var(--dark-theme-input); }
 
-/* main { background: var(--light-theme-very-light-gray) url(./assets/images/bg-desktop-light.jpg) no-repeat center top / 1440px auto; }
-@media (max-width: 640px) { main{ background-image: url(./assets/images/bg-mobile-light.jpg); background-size: 100% 200px; }}
-
-main.dark { background-color: var(--dark-theme-very-dark-blue); background-image: url(./assets/images/bg-desktop-dark.jpg); }
-@media (max-width: 640px) { main.dark { background-image: url(./assets/images/bg-mobile-dark.jpg); }} */
+main { color: var(--light-theme-text); background: var(--light-theme-background); }
+main.dark { color: var(--dark-theme-text); background-color: var(--dark-theme-background); }

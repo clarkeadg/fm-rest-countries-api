@@ -10,6 +10,7 @@ describe('Renders Layout component correctly', async () => {
   const { container } = render(
     <ThemeContextProvider>
       <Layout>
+        <></>
         {/* <ThemeSwitcher/> */}
       </Layout>
     </ThemeContextProvider>

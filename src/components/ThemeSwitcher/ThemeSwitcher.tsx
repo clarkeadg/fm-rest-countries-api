@@ -17,7 +17,7 @@ const ThemeSwitcher = () => {
 
   return (
     <button data-testid="theme-switcher" onClick={toggleTheme} className="theme-switcher">
-      <div className="flex items-center gap-3 font-bold leading-none text-sm">
+      <div className="flex items-center gap-3 font-bold text-[12px] md:text-[16px] leading-none">
         { theme == 'dark' ? (
           <>
             <IoMdSunny className="h-5 w-auto"/>

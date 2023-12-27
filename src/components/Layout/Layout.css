@@ -1,0 +1,3 @@
+main header { background: var(--light-theme-elements); }
+
+main.dark header { background: var(--dark-theme-elements); }

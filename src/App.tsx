@@ -7,7 +7,7 @@ const App = () => {
     <ThemeContextProvider>
       <Layout>
         <>
-          <div className="px-5">
+          <div className="px-4 md:px-[80px] py-5">
             Hello
           </div>
           <div className="absolute bottom-0 w-full h-10 flex items-center justify-center">
