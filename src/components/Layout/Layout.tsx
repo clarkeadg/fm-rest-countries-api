@@ -2,6 +2,7 @@ import { ReactNode, memo } from 'react'
 import Attribution from '../Attribution'
 import { useThemeContext } from '../ThemeSwitcher/ThemeContext'
 import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher'
+import Link from '../../lib/Link'
 import './Layout.css'
 
 type LayoutProps = {
@@ -14,9 +15,11 @@ const Layout = ({ children }:LayoutProps) => {
   return (
     <main className={`${theme} relative min-h-screen pb-10`}>
       <header className="flex items-center justify-between px-4 md:px-[78px] py-8 md:py-6 shadow">
-        <h1 className="header-text text-[15px] md:text-[24px] font-extrabold">
-          Where in the world?
-        </h1>
+        <Link href="/">
+          <h1 className="header-text text-[15px] md:text-[24px] font-extrabold">
+            Where in the world?
+          </h1>
+        </Link>
         <ThemeSwitcher/>
       </header>
       { children }

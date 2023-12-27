@@ -3,16 +3,28 @@ import { render, fireEvent, screen } from '@testing-library/react';
 
 import Layout from './Layout';
 import ThemeContextProvider from '../ThemeSwitcher/ThemeContext';
-//import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+const Page = () => {
+  return (
+    <Layout>
+      <></>
+    </Layout>
+  )
+}
+
+const router = createBrowserRouter([
+  {
+    path: "*",
+    element: <Page/>,
+  }
+]);
 
 describe('Renders Layout component correctly', async () => {
 
   const { container } = render(
     <ThemeContextProvider>
-      <Layout>
-        <></>
-        {/* <ThemeSwitcher/> */}
-      </Layout>
+      <RouterProvider router={router} />
     </ThemeContextProvider>
   );
   

@@ -1,4 +1,5 @@
-import { memo } from 'react'
+import { memo, useState } from 'react'
+import { FaSearch } from "react-icons/fa";
 import './SearchForm.css'
 
 type SearchFormProps = {
@@ -6,9 +7,29 @@ type SearchFormProps = {
 }
 
 const SearchForm = ({  }:SearchFormProps) => {
+  const [query, setQuery] = useState("");
+
+  const handleSubmit = (e:React.SyntheticEvent) => {
+    e.preventDefault();
+  }
+  
   return (
     <div className={"search-form"}>
-      Search Form
+      <form onSubmit={handleSubmit} data-testid="search-form" className="flex items-center gap-2 md:gap-4">
+        <div>
+          <FaSearch/>
+        </div>
+        <div className="flex grow">
+          <input
+            value={query}
+            onChange={(e)=>{ setQuery(e.target.value)}}
+            className="text-xs md:text-[18px] leading-none px-2 py-4 md:py-5 w-full focus:outline-none mt-[2px]"
+            type="text"
+            placeholder="Search for a country..."
+            data-testid="search-input"
+          />
+        </div>
+      </form>
     </div>
   )
 }

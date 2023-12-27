@@ -1,6 +1,7 @@
 import Layout from '../components/Layout/Layout'
 import Button from '../components/Button/Button'
 import { FaArrowLeftLong } from "react-icons/fa6";
+import CountryDetails from '../components/Country/CountryDetails'
 
 const Details = () => {
   return (
@@ -10,6 +11,9 @@ const Details = () => {
           <Button href="/" accessoryLeft={<FaArrowLeftLong />}>
             Back
           </Button>
+        </div>
+        <div className="py-10"> 
+          <CountryDetails/>
         </div>
       </section>
     </Layout>    
