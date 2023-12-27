@@ -1,4 +1,5 @@
 import { ReactNode, memo } from 'react'
+import Attribution from '../Attribution'
 import { useThemeContext } from '../ThemeSwitcher/ThemeContext'
 import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher'
 import './Layout.css'
@@ -19,6 +20,9 @@ const Layout = ({ children }:Layout) => {
         <ThemeSwitcher/>
       </header>
       { children }
+      <div className="absolute bottom-0 w-full h-10 flex items-center justify-center">
+        <Attribution/>
+      </div>
     </main>
   )
 }

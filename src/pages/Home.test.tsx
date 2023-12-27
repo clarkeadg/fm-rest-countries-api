@@ -1,12 +1,15 @@
 import { describe, it, expect } from 'vitest';
 import { render } from '@testing-library/react';
 
-import App from './App';
+import ThemeContextProvider from '../components/ThemeSwitcher/ThemeContext'
+import Home from './Home';
 
-describe('Renders App component correctly', async () => {
+describe('Renders Home Page component correctly', async () => {
 
   const { container } = render(
-    <App/>
+    <ThemeContextProvider>
+      <Home/>
+    </ThemeContextProvider>
   );
 
   const main = container.querySelector('main');

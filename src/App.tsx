@@ -1,20 +1,33 @@
 import ThemeContextProvider from './components/ThemeSwitcher/ThemeContext'
-import Layout from './components/Layout/Layout'
-import Attribution from './components/Attribution'
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from './pages/Home'
+import Details from './pages/Details'
+import ErrorPage from './pages/ErrorPage'
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home/>,
+    errorElement: <ErrorPage/>
+  },
+  {
+    path: "/details",
+    element:  <Details/>,
+    errorElement: <ErrorPage/>
+  },
+  {
+    path: "*",
+    element:  <ErrorPage/>,
+    errorElement: <ErrorPage />
+  }
+], {
+  basename: "/fm-rest-countries-api",
+});
 
 const App = () => {
   return (
     <ThemeContextProvider>
-      <Layout>
-        <>
-          <div className="px-4 md:px-[80px] py-5">
-            Hello
-          </div>
-          <div className="absolute bottom-0 w-full h-10 flex items-center justify-center">
-            <Attribution/>
-          </div>
-        </>
-      </Layout>
+      <RouterProvider router={router} />
     </ThemeContextProvider>
   )
 }
