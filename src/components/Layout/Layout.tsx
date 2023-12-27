@@ -20,9 +20,9 @@ const Layout = ({ children }:Layout) => {
         <ThemeSwitcher/>
       </header>
       { children }
-      <div className="absolute bottom-0 w-full h-10 flex items-center justify-center">
+      <footer className="absolute bottom-0 w-full h-10 flex items-center justify-center">
         <Attribution/>
-      </div>
+      </footer>
     </main>
   )
 }
