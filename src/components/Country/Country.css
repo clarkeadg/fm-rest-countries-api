@@ -1,0 +1,2 @@
+.country-card { background: var(--light-theme-elements); }
+.dark .country-card { background: var(--dark-theme-elements); }
