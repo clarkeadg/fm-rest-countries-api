@@ -29,6 +29,8 @@ This is a solution to the [REST Countries API with color theme switcher challeng
 - [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) - For tests
 - [React Icons](https://react-icons.github.io/react-icons//) - For Icons
 - [React Router](https://reactrouter.com/en/main) - For routing
+- [React Query](https://tanstack.com/query/latest/docs/react/overview) - For fetching api data
+- [REST Countries](https://restcountries.com) - For the countries api
 
 ## Getting Started
 
