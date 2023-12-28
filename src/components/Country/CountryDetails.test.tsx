@@ -4,7 +4,11 @@ import { render, fireEvent, screen } from '@testing-library/react';
 import CountryDetails from './CountryDetails';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-const borderCountries = ['France','Germany','Netherlands'];
+const borderCountries = [
+  { name: { common: 'France' } },
+  { name: { common: 'Germany' } },
+  { name: { common: 'Netherlands' } }
+];
 
 const Page = () => {
   return (
@@ -84,7 +88,7 @@ describe('Renders CountryDetails component correctly', async () => {
 
   it('Should have borderCountries elements', async () => {
     borderCountries.forEach(country => {
-      const element = screen.getByText(country);
+      const element = screen.getByText(country.name.common);
       expect(element).not.toBeNull();
     });  
   });

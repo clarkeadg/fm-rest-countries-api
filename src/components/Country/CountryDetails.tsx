@@ -14,7 +14,7 @@ type CountryDetailsProps = {
   topLevelDomain: string,
   currencies: string,
   languages: string,
-  borderCountries: []
+  borderCountries: any[]
 }
 
 const CountryDetails = ({ flag, title, nativeName, population, region, subregion, capital, topLevelDomain, currencies, languages, borderCountries }:CountryDetailsProps) => {
