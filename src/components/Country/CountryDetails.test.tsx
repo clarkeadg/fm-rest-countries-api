@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 import CountryDetails from './CountryDetails';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -37,7 +37,7 @@ const router = createBrowserRouter([
 
 describe('Renders CountryDetails component correctly', async () => {
 
-  const { container } = render(
+  render(
     <RouterProvider router={router} />
   );
   

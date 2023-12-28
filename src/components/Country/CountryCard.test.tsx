@@ -1,12 +1,13 @@
 import { describe, it, expect } from 'vitest';
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 import CountryCard from './CountryCard';
 
 describe('Renders CountryDetails component correctly', async () => {
 
-  const { container } = render(
+  render(
     <CountryCard
+      flag={"https://flagcdn.com/de.svg"}
       title={"Belgium"}
       population={"11,319,511"}
       region={"Europe"}

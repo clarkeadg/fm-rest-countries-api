@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 
 import Button from './Button';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";

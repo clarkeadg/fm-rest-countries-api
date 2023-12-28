@@ -1,12 +1,12 @@
 import { describe, it, expect } from 'vitest';
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 import SearchForm from './SearchForm';
 
 describe('Renders SearchForm component correctly', async () => {
 
-  const { container } = render(
-    <SearchForm/>
+  render(
+    <SearchForm query="" setQuery={()=>{}}/>
   );
   
   it('Should have a form element', async () => {  
