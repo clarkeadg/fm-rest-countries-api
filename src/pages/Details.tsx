@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { useQuery } from '@tanstack/react-query'
 import CountriesAPI from '../services/CountriesAPI'
 import Utils from '../components/Country/utils'
@@ -11,12 +11,12 @@ const Details = () => {
   const { name } = useParams();
   if(!name) return false;
 
+  const navigate = useNavigate();
+
   const { data, error: getCountryError } = useQuery({
     queryKey: [name],
     queryFn: () => CountriesAPI.getByName(name)
   }) 
-  
-  console.log('data', data)
   
   const codes = data?.borders?.toString();
 
@@ -53,7 +53,10 @@ const Details = () => {
   return (
     <section className="px-8 md:px-[80px] pt-[40px] md:pt-[82px]">
       <div className="flex w-full items-center justify-between mb-14"> 
-        <Button href="/" accessoryLeft={<FaArrowLeftLong />}>
+        <Button 
+          accessoryLeft={<FaArrowLeftLong />}
+          handleClick={()=> navigate(-1)}
+        >
           Back
         </Button>
       </div>

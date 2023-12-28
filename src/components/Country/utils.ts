@@ -28,7 +28,7 @@ export const getCurrencies = (data:any) => {
   for(let i in data.currencies) {
     currencies.push(data.currencies[i].name)
   };
-  return currencies.toString();
+  return currencies.join(', ');
 }
 
 export const getLanguages = (data:any) => {
@@ -36,7 +36,7 @@ export const getLanguages = (data:any) => {
   for(let i in data.languages) {
     languages.push(data.languages[i])
   }
-  return languages.toString();
+  return languages.join(', ');
 }
 
 export const getBorderCountries = (data:any) => {
