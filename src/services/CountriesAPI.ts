@@ -1,14 +1,31 @@
-import fetchData from "../lib/fetchData"
+import axios from 'axios';
 
-const host = "https://restcountries.com/v3.1";
+const api = axios.create({
+  baseURL: 'https://restcountries.com/v3.1'
+});
 
 const CountriesAPI = {
 
-  getAll: () => fetchData(`${host}/all`),
+  getAll: async () => {
+    const { data } = await api.get(`/all`);
+    return data;
+  },
 
-  getByRegion: (region:string) => fetchData(`${host}/region/${region}`),
+  getByRegion: async (region:string) => {
+    const { data } = await api.get(`/region/${region}`);
+    return data;
+  },
 
-  getByName: (name:string) => fetchData(`${host}/name/${name}`)  
+  getByName: async (name:string) => {
+    const { data } = await api.get(`/name/${name}?fullText=true`);
+    if (data && data[0])
+    return data[0];
+  },
+
+  getByCodes: async (codes:string) => {
+    const { data } = await api.get(`/alpha?codes=${codes}`);
+    return data;
+  }
 }
 
 export default CountriesAPI;

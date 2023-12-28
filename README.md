@@ -30,6 +30,7 @@ This is a solution to the [REST Countries API with color theme switcher challeng
 - [React Icons](https://react-icons.github.io/react-icons//) - For Icons
 - [React Router](https://reactrouter.com/en/main) - For routing
 - [React Query](https://tanstack.com/query/latest/docs/react/overview) - For fetching api data
+- [Axios](https://axios-http.com/) - For making api requests
 - [REST Countries](https://restcountries.com) - For the countries api
 
 ## Getting Started

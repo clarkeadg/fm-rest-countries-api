@@ -3,11 +3,12 @@ import Button from '../Button/Button'
 import './Country.css'
 
 type CountryDetailsProps = {
+  flag: string,
   title: string,
   nativeName: string,
   population: string,
   region: string,
-  subRegion: string,
+  subregion: string,
   capital: string,
   topLevelDomain: string,
   currencies: string,
@@ -15,12 +16,12 @@ type CountryDetailsProps = {
   borderCountries: string[]
 }
 
-const CountryDetails = ({ title, nativeName, population, region, subRegion, capital, topLevelDomain, currencies, languages, borderCountries }:CountryDetailsProps) => {
+const CountryDetails = ({ flag, title, nativeName, population, region, subregion, capital, topLevelDomain, currencies, languages, borderCountries }:CountryDetailsProps) => {
   return (
     <div className="country-details md:flex gap-10 mx-auto max-w-[1440px] justify-between">
       {/* Flag  */}
-      <div className="mx-auto md:mx-0 w-[320px] h-[200px] md:w-[560px] md:h-[400px] bg-red-200">
-
+      <div className="mx-auto md:mx-0 w-[320px] md:w-[560px]">
+        <img src={flag} alt={`${title} Flag`} className="w-full h-auto" />
       </div>
       {/* Details */}
       <div className="md:w-[578px] pt-[38px]">
@@ -42,7 +43,7 @@ const CountryDetails = ({ title, nativeName, population, region, subRegion, capi
             </div>
             <div className="">
               <span className="font-bold">Sub Region: </span>
-              { subRegion }
+              { subregion }
             </div>
             <div className="">
               <span className="font-bold">Capital: </span>
@@ -71,7 +72,7 @@ const CountryDetails = ({ title, nativeName, population, region, subRegion, capi
           <div className="flex items-center gap-4">
             {borderCountries.map((item, index)=>{
               return (
-                <Button key={index} href="/details" size="small">{item}</Button>
+                <Button key={index} href={`/country/${item.toLowerCase()}`} size="small">{item}</Button>
               )
             })}
           </div>                   

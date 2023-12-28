@@ -21,7 +21,7 @@ const Home = () => {
         </Dropdown> 
       </div>
       <div className="flex justify-center md:justify-start py-3"> 
-        <Link href="/details">
+        <Link href={`/country/germany`}>
           <CountryCard
             title={"Germany"}
             population={"81,770,900"}

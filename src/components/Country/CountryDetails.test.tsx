@@ -9,11 +9,12 @@ const borderCountries = ['France','Germany','Netherlands'];
 const Page = () => {
   return (
     <CountryDetails
+      flag={"https://flagcdn.com/de.svg"}
       title={"Belgium"}
       nativeName={"Belgie"}
       population={"11,319,511"}
       region={"Europe"}
-      subRegion={"Western Europe"}
+      subregion={"Western Europe"}
       capital={"Brussels"}
       topLevelDomain={".be"}
       currencies={"Euro"}
@@ -56,7 +57,7 @@ describe('Renders CountryDetails component correctly', async () => {
     expect(element).not.toBeNull();
   });
 
-  it('Should have subRegion element', async () => {  
+  it('Should have subregion element', async () => {  
     const element = screen.getByText('Western Europe');
     expect(element).not.toBeNull();
   });
