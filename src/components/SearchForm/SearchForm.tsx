@@ -14,7 +14,7 @@ const SearchForm = ({  }:SearchFormProps) => {
   }
   
   return (
-    <div className={"search-form px-10 md:px-9 rounded-md shadow w-[480px] max-w-full mb-11 md:mb-0"}>
+    <div className={"search-form px-10 md:px-9 rounded-md shadow w-[480px] max-w-full"}>
       <form onSubmit={handleSubmit} data-testid="search-form" className="flex items-center gap-6 md:gap-4">        
         <FaSearch className="text-[14px] md:text-[17px]"/>        
         <div className="flex grow">

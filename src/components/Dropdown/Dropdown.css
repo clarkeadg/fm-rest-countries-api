@@ -1,0 +1,9 @@
+
+.dropdown-icon { transition: transform 0.2s; transform: rotate(0); }
+.dropdown.active .dropdown-icon { transform: rotate(180deg); }
+
+.dropdown-trigger { background: var(--light-theme-elements); }
+.dark .dropdown-trigger { background: var(--dark-theme-elements); }
+
+.dropdown-menu { background: var(--light-theme-elements); }
+.dark .dropdown-menu { background: var(--dark-theme-elements); }
