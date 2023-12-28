@@ -29,15 +29,25 @@ describe('Renders Home Page component correctly', async () => {
       <RouterProvider router={router} />      
     </ThemeContextProvider>
   );
-
-  const main = container.querySelector('main');
-  const title = container.querySelector('h1');
   
-  it('Should have a main tag', async () => {  
-    expect(main).not.toBeNull();
+  it('Should have a main tag', async () => { 
+    const element = container.querySelector('main'); 
+    expect(element).not.toBeNull();
   });
 
   it('Should have an h1 tag', async () => {  
-    expect(title).not.toBeNull();
+    const element = container.querySelector('h1');
+    expect(element).not.toBeNull();
   });
+
+  it('Should have a search-form', async () => {  
+    const element = container.querySelector('.search-form');
+    expect(element).not.toBeNull();
+  });
+
+  it('Should have a dropdown', async () => {  
+    const element = container.querySelector('.dropdown');
+    expect(element).not.toBeNull();
+  });
+
 });

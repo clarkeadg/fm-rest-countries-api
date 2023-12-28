@@ -30,14 +30,23 @@ describe('Renders Details Page component correctly', async () => {
     </ThemeContextProvider>
   );
 
-  const main = container.querySelector('main');
-  const title = container.querySelector('h1');
-  
-  it('Should have a main tag', async () => {  
-    expect(main).not.toBeNull();
+  it('Should have a main tag', async () => { 
+    const element = container.querySelector('main'); 
+    expect(element).not.toBeNull();
   });
 
   it('Should have an h1 tag', async () => {  
-    expect(title).not.toBeNull();
+    const element = container.querySelector('h1');
+    expect(element).not.toBeNull();
+  });
+
+  it('Should have a back button', async () => {  
+    const element = container.querySelector('a.button[href="/"]');
+    expect(element).not.toBeNull();
+  });
+
+  it('Should have a country details component', async () => {  
+    const element = container.querySelector('.country-details');
+    expect(element).not.toBeNull();
   });
 });
