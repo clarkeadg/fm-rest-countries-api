@@ -1,4 +1,4 @@
-import { memo, useState } from 'react'
+import { memo } from 'react'
 import { FaSearch } from "react-icons/fa";
 import './SearchForm.css'
 

@@ -6,7 +6,7 @@ import ThemeContextProvider from './ThemeContext';
 
 describe('Renders ThemeSwitcher component correctly', async () => {
 
-  const { container } = render(
+  render(
     <ThemeContextProvider>
       <ThemeSwitcher/>
     </ThemeContextProvider>
