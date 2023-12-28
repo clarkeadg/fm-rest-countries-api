@@ -22,6 +22,12 @@ const CountriesAPI = {
     return data[0];
   },
 
+  getByCode: async (code:string) => {
+    const { data } = await api.get(`/alpha/${code}`);
+    if (data && data[0])
+    return data[0];
+  },
+
   getByCodes: async (codes:string) => {
     const { data } = await api.get(`/alpha?codes=${codes}`);
     return data;

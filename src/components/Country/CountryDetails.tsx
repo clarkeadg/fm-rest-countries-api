@@ -1,4 +1,5 @@
 import { memo } from 'react'
+import Utils from './utils'
 import Button from '../Button/Button'
 import './Country.css'
 
@@ -13,7 +14,7 @@ type CountryDetailsProps = {
   topLevelDomain: string,
   currencies: string,
   languages: string,
-  borderCountries: string[]
+  borderCountries: []
 }
 
 const CountryDetails = ({ flag, title, nativeName, population, region, subregion, capital, topLevelDomain, currencies, languages, borderCountries }:CountryDetailsProps) => {
@@ -67,16 +68,16 @@ const CountryDetails = ({ flag, title, nativeName, population, region, subregion
           </div>
         </div>
         {/* Border Countries */}
-        <div className="md:flex items-center w-full gap-4">
+        { (borderCountries && borderCountries.length > 0) && <div className="md:flex w-full gap-4">
           <div className="text-[15px] font-bold mb-4 md:mb-0">Border Countries: </div>
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap gap-x-4 gap-y-3">
             {borderCountries.map((item, index)=>{
               return (
-                <Button key={index} href={`/country/${item.toLowerCase()}`} size="small">{item}</Button>
+                <Button key={index} href={`/country/${Utils.getName(item).toLowerCase()}`} size="small">{Utils.getName(item)}</Button>
               )
             })}
           </div>                   
-        </div>
+        </div> }
       </div>
     </div>
   )

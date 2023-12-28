@@ -1,6 +1,14 @@
 
+export const getCode = (data:any) => {
+  return data.cca3;
+}
+
 export const getFlag = (data:any) => {
   return data.flags.svg || data.flags.png;
+}
+
+export const getName = (data:any) => {
+  return data.name.common;
 }
 
 export const getPopulation = (data:any) => {
@@ -34,13 +42,15 @@ export const getLanguages = (data:any) => {
 export const getBorderCountries = (data:any) => {
   const borderCountries:string[] = [];
   for(let i in data) {
-    borderCountries.push(data[i].name.common)
+    borderCountries.push(getName(data[i]))
   }
   return borderCountries
 }
 
 export default {
+  getCode,
   getFlag,
+  getName,
   getPopulation,
   getNativeName,
   getCurrencies,
