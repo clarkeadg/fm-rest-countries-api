@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import { useQuery } from '@tanstack/react-query'
 import CountriesAPI from '../services/CountriesAPI'
 import Utils from '../components/Country/utils'
@@ -5,10 +7,22 @@ import Loading from '../components/Loading/Loading'
 import SearchForm from '../components/SearchForm/SearchForm'
 import Dropdown from '../components/Dropdown/Dropdown'
 import CountryCard from '../components/Country/CountryCard'
+import RegionButton from '../components/Country/RegionButton'
 import Link from '../lib/Link'
 
-const Home = () => {
-  
+const Home = () => {  
+  const [params, setParams] = useSearchParams();
+  const [region, setRegion] = useState(params.get('region') || '');
+  const [query, setQuery] = useState(params.get('q') || '');
+
+  useEffect(()=>{
+    setParams({ region })
+  }, [region])
+
+  useEffect(()=>{
+    setParams({ q: query })
+  }, [query])
+
   const { isLoading, error, data } = useQuery({
     queryKey: ['all'],
     queryFn: () => CountriesAPI.getAll()
@@ -34,24 +48,32 @@ const Home = () => {
     <section className="px-4 md:px-[80px] pt-[25px] md:pt-[50px]">
       <div className="md:flex w-full justify-between mb-10"> 
         <div className="mb-12 md:mb-0">
-          <SearchForm/>
+          <SearchForm query={query} setQuery={setQuery}/>
         </div>
-        <Dropdown title="Filter by Region">
+        <Dropdown title={region || "Filter by Region"}>
           <div className="leading-[24px] md:leading-[28px]">
-            <div>Africa</div>
-            <div>America</div>
-            <div>Asia</div>
-            <div>Europe</div>
-            <div>Oceania</div>
+            <RegionButton title="All" handleClick={setRegion} />
+            <RegionButton title="Africa" handleClick={setRegion} />
+            <RegionButton title="Americas" handleClick={setRegion} />
+            <RegionButton title="Asia" handleClick={setRegion} />
+            <RegionButton title="Europe" handleClick={setRegion} />
+            <RegionButton title="Oceania" handleClick={setRegion} />
           </div>
         </Dropdown> 
       </div>
       <div className="flex justify-center py-3"> 
         <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
           { data.map((item:any, index:number)=>{
+            // Filter by region
+            if (region && item.region != region) return false;
+            
+            // Filter by search
+            const name = Utils.getName(item).toLowerCase();
+            if (query && !~name.search(new RegExp(`^${query.toLowerCase()}`))) return false;
+
             return (
               <li key={index}>
-                <Link href={`/country/${Utils.getName(item).toLowerCase()}`}>
+                <Link href={`/country/${name}`}>
                   <CountryCard
                     flag={Utils.getFlag(item)}
                     title={Utils.getName(item)}

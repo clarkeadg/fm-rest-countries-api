@@ -3,11 +3,11 @@ import { FaSearch } from "react-icons/fa";
 import './SearchForm.css'
 
 type SearchFormProps = {
-
+  query: string,
+  setQuery: Function
 }
 
-const SearchForm = ({  }:SearchFormProps) => {
-  const [query, setQuery] = useState("");
+const SearchForm = ({ query, setQuery }:SearchFormProps) => {
 
   const handleSubmit = (e:React.SyntheticEvent) => {
     e.preventDefault();

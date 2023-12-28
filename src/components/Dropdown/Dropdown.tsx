@@ -1,4 +1,4 @@
-import { useState, ReactNode, memo } from 'react'
+import { useState, useEffect, ReactNode, memo } from 'react'
 import { FaChevronDown } from "react-icons/fa6";
 import './Dropdown.css'
 
@@ -13,6 +13,10 @@ const Dropdown = ({ title, children }:DropdownProps) => {
   const toggleDropdown = () => {
     setActive((active) => !active)
   }
+
+  useEffect(()=>{
+    setActive(false)
+  }, [title])
 
   return (
     <div className={`dropdown ${active ? "active" : ""} w-[200px]`}>

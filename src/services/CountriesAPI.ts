@@ -11,19 +11,8 @@ const CountriesAPI = {
     return data;
   },
 
-  getByRegion: async (region:string) => {
-    const { data } = await api.get(`/region/${region}`);
-    return data;
-  },
-
   getByName: async (name:string) => {
     const { data } = await api.get(`/name/${name}?fullText=true`);
-    if (data && data[0])
-    return data[0];
-  },
-
-  getByCode: async (code:string) => {
-    const { data } = await api.get(`/alpha/${code}`);
     if (data && data[0])
     return data[0];
   },
