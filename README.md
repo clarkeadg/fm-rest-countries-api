@@ -8,6 +8,7 @@ This is a solution to the [REST Countries API with color theme switcher challeng
   - [Screenshot](#screenshot)
   - [Links](#links)
 - [Built with](#built-with)
+- [Getting Started](#getting-started)
 - [Author](#author)
 
 ## Overview
