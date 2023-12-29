@@ -69,7 +69,7 @@ const Details = () => {
           region={data.region}
           subregion={data.subregion}
           capital={data.capital}
-          topLevelDomain={data.tld}
+          topLevelDomain={data.tld[0]}
           currencies={Utils.getCurrencies(data)}
           languages={Utils.getLanguages(data)}
           borderCountries={borderCountries}
