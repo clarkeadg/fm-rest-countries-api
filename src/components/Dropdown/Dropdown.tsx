@@ -24,9 +24,9 @@ const Dropdown = ({ title, children }:DropdownProps) => {
         <span className="dropdown-title text-[12px] md:text-[14px]">
           { title }
         </span>
-        <div className="dropdown-icon text-[10px]">
+        <span className="dropdown-icon text-[10px]">
           <FaChevronDown/>
-        </div>
+        </span>
       </button>
       { active && <div className="relative">
         <div className="dropdown-menu absolute top-[6px] left-0 w-full text-[12px] md:text-[14px] px-7 py-3 rounded-md shadow">

@@ -21,12 +21,12 @@ const ThemeSwitcher = () => {
         { theme == 'dark' ? (
           <>
             <FaRegMoon className="h-5 w-auto"/>
-            <div>Dark Mode</div>
+            <span>Dark Mode</span>
           </>
         ) : (
           <>
             <IoMdSunny className="h-5 w-auto"/>
-            <div>Light Mode</div>
+            <span>Light Mode</span>
           </>
         ) }
       </span>
