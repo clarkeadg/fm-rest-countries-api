@@ -73,7 +73,7 @@ const CountryDetails = ({ flag, title, nativeName, population, region, subregion
           <div className="flex flex-wrap gap-x-4 gap-y-3">
             {borderCountries.map((item, index)=>{
               return (
-                <Button key={index} href={`/country/${Utils.getName(item).toLowerCase()}`} size="small">{Utils.getName(item)}</Button>
+                <Button key={index} href={`/country/${encodeURIComponent(Utils.getName(item).toLowerCase())}`} size="small">{Utils.getName(item)}</Button>
               )
             })}
           </div>                   

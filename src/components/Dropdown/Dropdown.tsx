@@ -21,9 +21,9 @@ const Dropdown = ({ title, children }:DropdownProps) => {
   return (
     <div className={`dropdown ${active ? "active" : ""} w-[200px]`}>
       <button data-testid="dropdown-trigger" onClick={toggleDropdown} className="dropdown-trigger flex w-full items-center justify-between pl-7 pr-5 py-4 md:py-5 gap-10 rounded-md shadow">
-        <div className="dropdown-title text-[12px] md:text-[14px]">
+        <span className="dropdown-title text-[12px] md:text-[14px]">
           { title }
-        </div>
+        </span>
         <div className="dropdown-icon text-[10px]">
           <FaChevronDown/>
         </div>

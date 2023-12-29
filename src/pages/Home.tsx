@@ -73,7 +73,7 @@ const Home = () => {
 
             return (
               <li key={index}>
-                <Link href={`/country/${name}`} className="flex h-full">
+                <Link href={`/country/${encodeURIComponent(name)}`} className="flex h-full">
                   <CountryCard
                     flag={Utils.getFlag(item)}
                     title={Utils.getName(item)}
