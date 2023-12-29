@@ -11,15 +11,15 @@ describe('Renders ThemeSwitcher component correctly', async () => {
       <ThemeSwitcher/>
     </ThemeContextProvider>
   );
-  
-  it('Should have a sun icon', async () => {  
+
+  it('Should have a moon icon', async () => {  
     fireEvent.click(screen.getByTestId('theme-switcher'));
 
     const buttonText = screen.getByText('Light Mode');
     expect(buttonText).not.toBeNull();
   });
 
-  it('Should have a moon icon', async () => {  
+  it('Should have a sun icon', async () => {  
     fireEvent.click(screen.getByTestId('theme-switcher'));
 
     const buttonText = screen.getByText('Dark Mode');

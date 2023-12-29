@@ -20,13 +20,13 @@ const ThemeSwitcher = () => {
       <div className="flex items-center gap-3 font-bold text-[12px] md:text-[16px] leading-none">
         { theme == 'dark' ? (
           <>
-            <IoMdSunny className="h-5 w-auto"/>
-            <div>Light Mode</div>
+            <FaRegMoon className="h-5 w-auto"/>
+            <div>Dark Mode</div>
           </>
         ) : (
           <>
-            <FaRegMoon className="h-5 w-auto"/>
-            <div>Dark Mode</div>
+            <IoMdSunny className="h-5 w-auto"/>
+            <div>Light Mode</div>
           </>
         ) }
       </div>

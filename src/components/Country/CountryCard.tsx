@@ -12,7 +12,7 @@ type CountryCardProps = {
 const CountryCard = ({ flag, title, population, region, capital }:CountryCardProps) => {
   return (
     <div className="country-card rounded-md overflow-hidden shadow w-[265px] max-w-full hover:opacity-90">
-      <div className="w-full">
+      <div className="w-full aspect-[4/3] overflow-hidden">
         <img src={flag} alt={`${title} Flag`} className="w-full h-auto" />
       </div>
       <div className="p-7">

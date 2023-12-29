@@ -16,12 +16,8 @@ const Home = () => {
   const [query, setQuery] = useState(params.get('q') || '');
 
   useEffect(()=>{
-    setParams({ region })
-  }, [region])
-
-  useEffect(()=>{
-    setParams({ q: query })
-  }, [query])
+    setParams({ region, q: query })
+  }, [region, query])
 
   const { isLoading, error, data } = useQuery({
     queryKey: ['all'],
@@ -43,6 +39,10 @@ const Home = () => {
       </section>
     )
   }
+
+  const sortedItems = data.sort((a:any, b:any)=>{
+    return a.population > b.population ? -1 : 1; 
+  });
   
   return (
     <section className="px-4 md:px-[80px] pt-[25px] md:pt-[50px]">
@@ -63,7 +63,7 @@ const Home = () => {
       </div>
       <div className="flex justify-center py-3"> 
         <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
-          { data.map((item:any, index:number)=>{
+          { sortedItems.map((item:any, index:number)=>{
             // Filter by region
             if (region && item.region != region) return false;
             
@@ -73,7 +73,7 @@ const Home = () => {
 
             return (
               <li key={index}>
-                <Link href={`/country/${name}`}>
+                <Link href={`/country/${name}`} className="flex h-full">
                   <CountryCard
                     flag={Utils.getFlag(item)}
                     title={Utils.getName(item)}
